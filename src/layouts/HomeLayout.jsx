@@ -3,7 +3,7 @@ import Header from "../components/Header/Header";
 
 function HomeLayout() {
   return (
-    <div>
+    <div className="max-w-[1140px] mx-auto">
       <Header />
       <main>
         <aside className="left-side"></aside>
