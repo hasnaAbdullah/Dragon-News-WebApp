@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../../assets/logo.png";
 import { format } from "date-fns";
 import Marquee from "react-fast-marquee";
+import Navbar from "../Navbar/Navbar";
 function Header() {
   return (
     <header className="flex flex-col items-center py-5 ">
@@ -24,7 +25,7 @@ function Header() {
           gradient={true}
           gradientWidth={50}
         >
-          <p>
+          <p className="mr-5">
             Match Highlights: Germany vs Spain — as it happened ! Match
             Highlights: Germany vs Spain as...
           </p>
@@ -34,6 +35,7 @@ function Header() {
           </p>
         </Marquee>
       </div>
+      <Navbar />
     </header>
   );
 }
