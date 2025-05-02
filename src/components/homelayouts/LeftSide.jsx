@@ -1,8 +1,14 @@
-import React from "react";
-import { NavLink } from "react-router";
+import React, { Suspense } from "react";
+import Categories from "../Categories/Categories";
 
 function LeftSide() {
-  return <div>This is left side component</div>;
+  return (
+    <div>
+      <Suspense fallback={"loading..."}>
+        <Categories />
+      </Suspense>
+    </div>
+  );
 }
 
 export default LeftSide;

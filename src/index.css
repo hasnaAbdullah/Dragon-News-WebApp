@@ -11,3 +11,6 @@
 * {
   font-family: "Open Sans", sans-serif;
 }
+a.active {
+  @apply bg-base-300 text-gray-800 font-semibold;
+}
