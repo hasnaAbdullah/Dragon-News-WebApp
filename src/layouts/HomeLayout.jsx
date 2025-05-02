@@ -15,7 +15,7 @@ function HomeLayout() {
         <section className="main-content col-span-6">
           <Outlet />
         </section>
-        <aside className="right-side col-span-3 bg-green-500">
+        <aside className="right-side col-span-3">
           <RightSide />
         </aside>
       </main>
