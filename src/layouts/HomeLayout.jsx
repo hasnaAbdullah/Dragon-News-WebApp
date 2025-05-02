@@ -10,7 +10,7 @@ function HomeLayout() {
     <div className="max-w-[1140px] mx-auto ">
       <Header />
       <main className="mt-10 grid grid-cols-12 gap-5">
-        <aside className="left-side col-span-3 ">
+        <aside className="left-side col-span-3 sticky top-0 h-fit ">
           <LeftSide />
         </aside>
         <section className="main-content col-span-6">
@@ -20,7 +20,7 @@ function HomeLayout() {
             <Outlet />
           )}
         </section>
-        <aside className="right-side col-span-3">
+        <aside className="right-side col-span-3 sticky top-0 h-fit">
           <RightSide />
         </aside>
       </main>
