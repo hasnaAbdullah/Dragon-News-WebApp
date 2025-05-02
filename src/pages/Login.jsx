@@ -1,7 +1,17 @@
-import React from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
+import AuthContext from "../contexts/AuthContext";
 
 function Login() {
+  const { signInUser } = use(AuthContext);
+  const handleLogIn = (e) => {
+    e.preventDefault();
+    const form = e.target;
+
+    const email = form.email.value;
+    const password = form.password.value;
+    signInUser(email, password);
+  };
   return (
     <div>
       <div className="card bg-base-100 w-md max-w-lg shrink-0 shadow-2xl">
@@ -9,12 +19,13 @@ function Login() {
           Please Login Now
         </h2>
         <div className="card-body">
-          <form className="fieldset space-y-3">
+          <form onSubmit={handleLogIn} className="fieldset space-y-3">
             <div>
               <label className="label text-base font-semibold text-gray-800">
                 Email
               </label>
               <input
+                name="email"
                 type="email"
                 className="input w-full text-base"
                 placeholder="Email"
@@ -25,6 +36,7 @@ function Login() {
                 Password
               </label>
               <input
+                name="password"
                 type="password"
                 className="input w-full text-base"
                 placeholder="Password"
