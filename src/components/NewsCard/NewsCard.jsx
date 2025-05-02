@@ -1,9 +1,18 @@
 import { FaEye, FaRegBookmark, FaStar } from "react-icons/fa";
 import { FiShare2 } from "react-icons/fi";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
-  const { title, thumbnail_url, author, rating, total_view, details, tags } =
-    news;
+  const {
+    id,
+    title,
+    thumbnail_url,
+    author,
+    rating,
+    total_view,
+    details,
+    tags,
+  } = news;
 
   const publishedDate = new Date(author.published_date)
     .toISOString()
@@ -47,9 +56,12 @@ const NewsCard = ({ news }) => {
       {/* Details (trimmed) */}
       <p className="text-sm text-gray-600">
         {details.length > 200 ? details.slice(0, 200) + "..." : details}
-        <span className="text-primary font-semibold ml-1 cursor-pointer">
+        <Link
+          to={`/news-details/${id}`}
+          className="text-primary font-semibold ml-1 cursor-pointer"
+        >
           Read More
-        </span>
+        </Link>
       </p>
 
       {/* Tags */}

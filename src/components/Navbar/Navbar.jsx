@@ -4,7 +4,6 @@ import userIcon from "../../assets/user.png";
 import AuthContext from "../../contexts/AuthContext";
 function Navbar() {
   const { user, signoutUser } = use(AuthContext);
-  console.log(user);
   const handleLogOut = () => {
     console.log("user is trying to log out");
     signoutUser();
