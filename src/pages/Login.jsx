@@ -6,7 +6,7 @@ function Login() {
   const { signInUser } = use(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
   const handleLogIn = (e) => {
     e.preventDefault();
     const form = e.target;

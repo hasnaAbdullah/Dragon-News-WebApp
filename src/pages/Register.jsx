@@ -14,7 +14,7 @@ function Register() {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log({ name, photo, email, password });
+    // console.log({ name, photo, email, password });
     createUser(email, password)
       .then((result) => {
         setUser(result.user);
@@ -22,7 +22,7 @@ function Register() {
         navigate("/");
       })
       .catch((error) => {
-        console.log(error.message);
+        // console.log(error.message);
       });
   };
   return (

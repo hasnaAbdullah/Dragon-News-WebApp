@@ -6,7 +6,7 @@ import Loading from "../pages/Loading";
 function PrivateRoute({ children }) {
   const { user, loading } = use(AuthContext);
   const location = useLocation();
-  console.log(location);
+  //   console.log(location);
   // const navigate = useNavigate() evabe use korle error ase kno
   if (loading) {
     return <Loading />;

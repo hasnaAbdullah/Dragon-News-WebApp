@@ -6,7 +6,7 @@ function Navbar() {
   const { user, signoutUser } = use(AuthContext);
 
   const handleLogOut = () => {
-    console.log("user is trying to log out");
+    // console.log("user is trying to log out");
     signoutUser();
   };
   return (
