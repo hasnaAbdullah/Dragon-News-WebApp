@@ -1,10 +1,11 @@
 import React, { use } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import AuthContext from "../contexts/AuthContext";
 import { updateProfile } from "firebase/auth";
 
 function Register() {
   const { setUser, createUser } = use(AuthContext);
+  const navigate = useNavigate();
   const handleRegister = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -18,6 +19,7 @@ function Register() {
       .then((result) => {
         setUser(result.user);
         updateProfile(result.user, { displayName: name, photoURL: photo });
+        navigate("/");
       })
       .catch((error) => {
         console.log(error.message);
