@@ -1,11 +1,20 @@
-import React from "react";
+import React, { use } from "react";
 import Header from "../components/Header/Header";
 import { Outlet, useNavigation } from "react-router";
 import LeftSide from "../components/homelayouts/LeftSide";
 import RightSide from "../components/homelayouts/RightSide";
+import AuthContext from "../contexts/AuthContext";
 
 function HomeLayout() {
   const navigation = useNavigation();
+  const { loading } = use(AuthContext);
+  if (loading) {
+    return (
+      <div className="h-screen flex justify-center items-center">
+        <h2 className="text-xl font-bold">Loading....</h2>
+      </div>
+    );
+  }
   return (
     <div className="max-w-[1140px] mx-auto ">
       <Header />

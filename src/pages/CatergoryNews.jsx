@@ -20,6 +20,15 @@ function CatergoryNews() {
       setCategoriesNews(filteredNews);
     }
   }, [categoryId, newsData]);
+
+  if (!categoriesNews.length) {
+    return (
+      <div className="h-screen flex justify-center items-center">
+        <h2 className="text-xl font-bold">Loading....</h2>
+      </div>
+    );
+  }
+
   return (
     <div>
       <h2 className="text-2xl font-semibold mb-7">
